@@ -1,0 +1,13 @@
+1 Banana 35 98 6
+2 Chips 10 33 12
+3 Rice 375 91 15
+4 Juice 39 100 4
+5 Fish 749 44 8
+6 Pasta 149 107 11
+7 Bread 179 72 4
+8 Tofu 225 78 14
+9 Yogurt 74 50 5
+10 Pork 375 98 9
+11 Chicken 309 92 7
+12 Apples 149 61 3
+13 VadaPav 20 130 12
