@@ -9,8 +9,6 @@
     
 */
 
-
-
 #include <iostream>
 #include <unistd.h>
 // #include <windows.h> //Enable it for windows
@@ -57,32 +55,30 @@ public:
 
         switch (aOption)
         {
-        case 1:
-            // if entered option is 1 then execute the addProduct function
-            addProduct();
-            break;
-        case 2:
-            // if entered option is 2 then execute the modifyProduct function
-            modifyProduct();
-            break;
-        case 3:
-            // if entered option is 3 then execute the deleteProduct function
-            deleteProduct();
-            break;
-        case 4:
-            // if entered option is 4 then back to the main menu
-            ::welcomeMsg();
-            break;
-        case 5:
-            // if entered option is 5 then show them the credit screen and exit from program
-            endScr();
-            exit(0);
-            break;
-        default:
-            // if entered option is other than above options then back to the back to the start of this function
-            cout << "Enter Proper Options" << endl;
-            welcomeMsg();
-            break;
+            case 1:
+                // if entered option is 1 then execute the addProduct function
+                addProduct();
+                break;
+            case 2:
+                // if entered option is 2 then execute the modifyProduct function
+                modifyProduct();
+                break;
+            case 3:
+                // if entered option is 3 then execute the deleteProduct function
+                deleteProduct();
+                break;
+            case 4:
+                // if entered option is 4 then back to the main menu
+                ::welcomeMsg();
+                break;
+            case 5:
+                // if entered option is 5 then show them the credit screen and exit from program
+                endScr();
+                exit(0);
+            default:
+                // if entered option is other than above options then back to the back to the start of this function
+                cout << "Enter Proper Options" << endl;
+                welcomeMsg();
         }
     }
 
@@ -115,9 +111,8 @@ public:
             database.open("database.txt", ios::out | ios::app); // open the file in write and append mode
 
             if (!database.is_open())
-            {
                 cerr << "Error opening file" << endl;
-            }
+
             // add the variables to the
             database << " " << pID << " " << pName << " " << pPrice << " " << pQty << " " << pDis << endl;
 
@@ -152,9 +147,7 @@ public:
         cin >> modifyID;
 
         if (!readFile.is_open())
-        {
             cerr << "Error opening file" << endl;
-        }
 
         int isAvailable = 0;
 
@@ -204,14 +197,7 @@ public:
 
         // after loop is entered product id is available then change it to file
         // adn execute else statement otherwise execute if statement
-        if (isAvailable == 0)
-        {
-            cout << "Enter Product Id Not Found!" << endl;
-        }
-        else
-        {
-            cout << "Entry Modified Successfully :)" << endl;
-        }
+        cout << ((isAvailable == 0) ? "Enter Product Id Not Found!" : "Entry Modified Successfully :)") << endl;
 
         cout << "We will redirect to the main menu in 3 seconds." << endl;
         sleep(3); // hold the screen for 3 seconds
@@ -230,9 +216,7 @@ public:
         cin >> modifyID;
 
         if (!readFile.is_open())
-        {
             cerr << "Error opening file" << endl;
-        }
 
         int isAvailable = 0;
 
@@ -264,14 +248,7 @@ public:
         srcFile.close();
         dstFile.close();
 
-        if (isAvailable == 0)
-        {
-            cout << "Enter Product Id Not Found!" << endl;
-        }
-        else
-        {
-            cout << "Entry Modified Successfully :)" << endl;
-        }
+        cout << ((isAvailable == 0) ? "Enter Product Id Not Found!" : "Entry Modified Successfully :)") << endl;
 
         cout << "We will redirect to the main menu in 3 seconds." << endl;
         sleep(3);
@@ -303,8 +280,7 @@ public:
             arr.push_back(stoi(pID));
         }
 
-        cout << "--------------------------------------------------" << endl
-             << endl;
+        cout << "--------------------------------------------------" << endl << endl;
 
         int items = 0;
         vector<string> choices;
@@ -337,7 +313,6 @@ public:
             else
             {
                 cout << "Invalid Product ID!" << endl;
-
                 cout << "We will redirect to the main menu in 3 seconds." << endl;
                 sleep(3);
                 buyerWelcomeMsg();
@@ -351,7 +326,6 @@ public:
             tm tm = *localtime(&t);
             int total_Amt = 0;
             int N = 1000;
-
 
             cout << " ------------------------------------------------------- " << endl;
             cout << "| \t\t         D-MART   \t\t\t|" << endl;
@@ -421,10 +395,8 @@ public:
 
 int main()
 {
-
     // execute when the program starts
     welcomeMsg();
-
     return 0;
 }
 
@@ -488,8 +460,7 @@ void welcomeMsg()
 
 void clearScr()
 {
-    // Clear the terminal
-    system("clear");
+    system("clear"); // Clear the terminal
 }
 
 void endScr()
@@ -498,9 +469,9 @@ void endScr()
     cout << "-----------------------------------" << endl;
     cout << "   Thanks For Visiting D-Mart\t" << endl;
     cout << "-----------------------------------" << endl
-         << endl;
+        << endl;
     cout << "Copyright © 2022 by Manish Kushwaha. All rights reserved." << endl
-         << endl;
+        << endl;
     cout << "------------Useful Links------------" << endl;
     cout << "GitHub :- https://github.com/illunise" << endl;
     cout << "Linkedin :- https://www.linkedin.com/in/illunise" << endl;
