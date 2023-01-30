@@ -5,8 +5,7 @@
     GitHub :- https://github.com/illunise
     Linkedin :- https://www.linkedin.com/in/illunise
     Instagram :- https://www.instagram.com/illunise
-    Project Link :- https://github.com/illunise/super-market-billing-system
-    
+    Project Link :- https://github.com/illunise/super-market-billing-system 
 */
 
 #include <bits/stdc++.h>  // replaced lots of header files 
@@ -30,6 +29,7 @@ public:
     void adminWelcomeMsg()
     {
         clearScr();
+        int aOption;
         // Welcome Screen Menu for Admin
         cout << "-----------------------------------" << endl;
         cout << "    Login Successful As Admin\t" << endl;
@@ -41,7 +41,6 @@ public:
         cout << "|       5. Exit                      |" << endl;
         cout << "-----------------------------------" << endl;
 
-        int aOption;
         cout << "Enter Your Option : ";
         cin >> aOption;
 
@@ -66,11 +65,12 @@ public:
             case 5:
                 // if entered option is 5 then show them the credit screen and exit from program
                 endScr();
-                exit(0);
+                break;
             default:
                 // if entered option is other than above options then back to the back to the start of this function
-                cout << "Enter Proper Options" << endl;
-                welcomeMsg();
+                cout << "ERROR: Invalid input please try again later." << endl;
+                fflush(stdin);
+                adminWelcomeMsg();
         }
     }
 
@@ -481,4 +481,5 @@ void endScr()
     cout << "GitHub :- https://github.com/illunise" << endl;
     cout << "Linkedin :- https://www.linkedin.com/in/illunise" << endl;
     cout << "Instagram :- https://www.instagram.com/illunise" << endl;
+    exit(0);
 }

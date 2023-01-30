@@ -18,6 +18,8 @@ Shopping Mall Billing System is a project simulating mall billing, allowing item
 - C/C++ compiler
 - Command Prompt or Windows Powershell
 
+**NOTE:** The program might not work on online compilers who don't provide libraries for FILE Handling & other. 
+
 ## Screenshots 🖼️
 
 ### 01. Welcome Screen
