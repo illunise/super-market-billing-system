@@ -9,16 +9,8 @@
     
 */
 
-#include <iostream>
-#include <unistd.h>
-// #include <windows.h> //Enable it for windows
-#include <cstdlib>
-#include <fstream>
-#include <stdexcept>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <ctime>
+#include <bits/stdc++.h>  // replaced lots of header files 
+#include<unistd.h>  // works for all OS and all functions 
 using namespace std;
 
 // Function Definition
@@ -460,7 +452,20 @@ void welcomeMsg()
 
 void clearScr()
 {
-    system("clear"); // Clear the terminal
+    // it checks for the compiler version and OS info. 
+    #if __APPLE__  // for all Apple OS 
+        system("clear");
+	    // apple specific code
+	#elif _WIN32
+	    // windows specific code (32 + 64 bits) 
+        system("cls");
+	#elif __LINUX__
+	    // linux specific code
+        system("clear");
+	#else
+	    // general code for all other OS 
+        system("clear");
+	#endif
 }
 
 void endScr()
