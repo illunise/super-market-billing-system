@@ -1,7 +1,8 @@
 # Super Market Billing System
+
 Shopping Mall Billing System is a project simulating mall billing, allowing item addition, cost calculation and receipt generation. Admin login feature enables adding, modifying and deleting products and inventory management. It uses classes, objects and file handling, also handle discounts. A useful tool for managing mall products, realistic.
 
-> _This program can perform the following actions:_
+## Features 
 
 - Admin Login
 - Adding Product
@@ -11,11 +12,13 @@ Shopping Mall Billing System is a project simulating mall billing, allowing item
 - Cost Calculation
 - Receipt Generation
 
-### Requirements for using it
+## Requirements for using the program 
 
 - A software (IDE) for reviewing the code
 - C/C++ compiler
 - Command Prompt or Windows Powershell
+
+**NOTE:** The program might not work on online compilers who don't provide libraries for FILE Handling & other. 
 
 ## Screenshots 🖼️
 
@@ -41,9 +44,8 @@ Shopping Mall Billing System is a project simulating mall billing, allowing item
 ![Super-Market-Billing-System-1](https://github.com/illunise/super-market-billing-system/blob/main/Images/7.png)
 
 ## MIT License
-MIT License
 
-```Bash
+```LICENSE
 Copyright (c) 2022 Illunise
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

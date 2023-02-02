@@ -5,20 +5,11 @@
     GitHub :- https://github.com/illunise
     Linkedin :- https://www.linkedin.com/in/illunise
     Instagram :- https://www.instagram.com/illunise
-    Project Link :- https://github.com/illunise/super-market-billing-system
-    
+    Project Link :- https://github.com/illunise/super-market-billing-system 
 */
 
-#include <iostream>
-#include <unistd.h>
-// #include <windows.h> //Enable it for windows
-#include <cstdlib>
-#include <fstream>
-#include <stdexcept>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <ctime>
+#include <bits/stdc++.h>  // replaced lots of header files 
+#include<unistd.h>  // works for all OS and all functions 
 using namespace std;
 
 // Function Definition
@@ -38,6 +29,7 @@ public:
     void adminWelcomeMsg()
     {
         clearScr();
+        int aOption;
         // Welcome Screen Menu for Admin
         cout << "-----------------------------------" << endl;
         cout << "    Login Successful As Admin\t" << endl;
@@ -49,7 +41,6 @@ public:
         cout << "|       5. Exit                      |" << endl;
         cout << "-----------------------------------" << endl;
 
-        int aOption;
         cout << "Enter Your Option : ";
         cin >> aOption;
 
@@ -74,11 +65,12 @@ public:
             case 5:
                 // if entered option is 5 then show them the credit screen and exit from program
                 endScr();
-                exit(0);
+                break;
             default:
                 // if entered option is other than above options then back to the back to the start of this function
-                cout << "Enter Proper Options" << endl;
-                welcomeMsg();
+                cout << "ERROR: Invalid input please try again later." << endl;
+                fflush(stdin);
+                adminWelcomeMsg();
         }
     }
 
@@ -460,7 +452,20 @@ void welcomeMsg()
 
 void clearScr()
 {
-    system("clear"); // Clear the terminal
+    // it checks for the compiler version and OS info. 
+    #if __APPLE__  // for all Apple OS 
+        system("clear");
+	    // apple specific code
+	#elif _WIN32
+	    // windows specific code (32 + 64 bits) 
+        system("cls");
+	#elif __LINUX__
+	    // linux specific code
+        system("clear");
+	#else
+	    // general code for all other OS 
+        system("clear");
+	#endif
 }
 
 void endScr()
@@ -476,4 +481,5 @@ void endScr()
     cout << "GitHub :- https://github.com/illunise" << endl;
     cout << "Linkedin :- https://www.linkedin.com/in/illunise" << endl;
     cout << "Instagram :- https://www.instagram.com/illunise" << endl;
+    exit(0);
 }
